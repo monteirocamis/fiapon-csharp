@@ -1,0 +1,15 @@
+/Users/Camis/Projects/fiapon/fiapon/bin/Debug/net6.0/fiapon
+/Users/Camis/Projects/fiapon/fiapon/bin/Debug/net6.0/fiapon.deps.json
+/Users/Camis/Projects/fiapon/fiapon/bin/Debug/net6.0/fiapon.runtimeconfig.json
+/Users/Camis/Projects/fiapon/fiapon/bin/Debug/net6.0/fiapon.dll
+/Users/Camis/Projects/fiapon/fiapon/bin/Debug/net6.0/fiapon.pdb
+/Users/Camis/Projects/fiapon/fiapon/obj/Debug/net6.0/fiapon.csproj.AssemblyReference.cache
+/Users/Camis/Projects/fiapon/fiapon/obj/Debug/net6.0/fiapon.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Camis/Projects/fiapon/fiapon/obj/Debug/net6.0/fiapon.AssemblyInfoInputs.cache
+/Users/Camis/Projects/fiapon/fiapon/obj/Debug/net6.0/fiapon.AssemblyInfo.cs
+/Users/Camis/Projects/fiapon/fiapon/obj/Debug/net6.0/fiapon.csproj.CoreCompileInputs.cache
+/Users/Camis/Projects/fiapon/fiapon/obj/Debug/net6.0/fiapon.dll
+/Users/Camis/Projects/fiapon/fiapon/obj/Debug/net6.0/refint/fiapon.dll
+/Users/Camis/Projects/fiapon/fiapon/obj/Debug/net6.0/fiapon.pdb
+/Users/Camis/Projects/fiapon/fiapon/obj/Debug/net6.0/fiapon.genruntimeconfig.cache
+/Users/Camis/Projects/fiapon/fiapon/obj/Debug/net6.0/ref/fiapon.dll
