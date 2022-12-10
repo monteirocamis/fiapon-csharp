@@ -1,7 +1,7 @@
 ﻿using System;
-using FiapSmartcity.Models;
+using FiapSmartCityMVC.Models;
 
-namespace FiapSmartcity.Models
+namespace FiapSmartCityMVC.Models
 {
 	public class Produto
 	{
