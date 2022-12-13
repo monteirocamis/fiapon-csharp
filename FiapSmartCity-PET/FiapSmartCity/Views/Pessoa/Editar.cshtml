@@ -1,0 +1,60 @@
+﻿@model FiapSmartCity.Models.Pessoa
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Pessoa - Editar</title>
+</head>
+<body>
+    <h1>Pessoa - Editar</h1>
+
+    <!-- formulário HTML com Tag Helpers-->
+    <form asp-action="Editar" asp-controller="Pessoa" method="post">
+        <!-- Campo oculto para guardar qual Id (chave) do registro alterado -->
+        <input type="hidden" asp-for="IdPessoa" />
+        <div class="form-horizontal">
+            <hr />
+
+            <div class="form-group">
+                <label>Nome</label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="NomePessoa" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Endereço</label>
+                <div class="col-md-10">
+                    <input asp-for="EnderecoPessoa" />
+                </div>
+
+                <hr />
+                
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="reset" value="Limpar" class="btn btn-warning" />
+                    <!-- HTML Simple para envio dos dados do formulário -->
+                    <input type="submit" value="Alterar Dados" class="btn btn-success" />
+                </div>
+            </div>
+            <hr />
+        </div>
+    </form>
+
+    <div>
+        <a asp-controller="Pessoa" asp-action="Index" class="btn btn-secondary">Voltar</a>
+    </div>
+
+    <hr />
+
+</body>
+</html>

@@ -41,10 +41,10 @@ namespace FiapSmartCityMVC.Properties.Repository
                 }
             //fecha objeto connection
                 connection.Close();
-            } 
+            }
 
 
-            return lista
+            return lista;
 }
 
 
