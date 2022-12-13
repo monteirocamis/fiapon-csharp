@@ -1,0 +1,7 @@
+﻿use FIAPSmartCity
+
+CREATE TABLE PESSOA (
+      IDPESSOA    int identity(1,1)        PRIMARY KEY,
+      NOMEPESSOA VARCHAR(50)  NOT NULL,
+      ENDERECOPESSOA  VARCHAR(50) NOT NULL
+    );

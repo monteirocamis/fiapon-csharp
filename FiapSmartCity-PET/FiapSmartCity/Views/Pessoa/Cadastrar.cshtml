@@ -1,0 +1,61 @@
+﻿@model FiapSmartCity.Models.Pessoa
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastrar - Pessoa</title>
+</head>
+<body>
+    <h1>Cadastrar - Pessoa</h1>
+
+    <!-- formulário HTML com Tag Helpers-->
+    <form asp-action="Cadastrar" asp-controller="Pessoa" method="post">
+        <div class="form-horizontal">
+            <hr />
+            
+            <!-- Trecho de validação para verificar se existe mensagem a ser exibida -->
+            @if (!Html.ViewData.ModelState.IsValid)
+            {
+                <!-- Tag para exibição da lista de erros -->
+                <div class="alert alert-danger"></div>
+            }
+
+            <div class="form-group">
+                <label asp-for="NomePessoa" class="control-label"></label>
+                <input asp-for="NomePessoa" class="form-control col-md-4" />
+                <span asp-validation-for="NomePessoa" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="EnderecoPessoa" class="control-label"></label>
+                <input asp-for="EnderecoPessoa" class="form-control col-md-4" />
+                <span asp-validation-for="EnderecoPessoa" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="reset" value="Limpar" class="btn btn-secondary" />
+                    <!-- HTML Simple para envio dos dados do formulário -->
+                    <input type="submit" value="Cadastrar" class="btn btn-success" />
+                </div>
+            </div>
+            
+            <hr />
+
+        </div>
+    </form>
+
+    <div>
+        <a asp-controller="Pessoa" asp-action="Index" class="btn btn-secondary">Voltar</a>
+    </div>
+
+    <hr />
+    
+</body>
+</html>

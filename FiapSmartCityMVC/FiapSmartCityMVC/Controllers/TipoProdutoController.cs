@@ -1,50 +1,99 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
+﻿
+using FiapSmartCityMVC.Repository;
 using FiapSmartCityMVC.Models;
 using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using System.Reflection;
 
 namespace FiapSmartCityMVC.Controllers
 {
     public class TipoProdutoController : Controller
     {
-        // GET: /<controller>/
+
+        private readonly TipoProdutoRepository tipoProdutoRepository;
+
+        public TipoProdutoController()
+        {
+            tipoProdutoRepository = new TipoProdutoRepository();
+        }
+
+        [Filtros.LogFilter]
+        [HttpGet]
         public IActionResult Index()
         {
-            // Criando o atributo da lista
-            IList<Models.TipoProduto> listaTipo = new List<Models.TipoProduto>();
-
-            // Adicionando na lista o TipoProduto da Tinta
-            listaTipo.Add(new TipoProduto()
-            {
-                IdTipo = 1,
-                DescricaoTipo = "Tinta",
-                Comercializado = true
-            });
-
-            listaTipo.Add(new TipoProduto()
-            {
-                IdTipo = 2,
-                DescricaoTipo = "Filtro de água",
-                Comercializado = true
-            });
-
-            listaTipo.Add(new TipoProduto()
-            {
-                IdTipo = 3,
-                DescricaoTipo = "Captador de energia",
-                Comercializado = false
-            });
-
-            // Retornando para View a lista de Tipos
+            var listaTipo = tipoProdutoRepository.Listar();
             return View(listaTipo);
+        }
+
+        // Anotação de uso do Verb HTTP Get
+        [HttpGet]
+        public ActionResult Cadastrar()
+        {
+            return View(new TipoProduto());
+        }
+
+        // Anotação de uso do Verb HTTP Post
+        [HttpPost]
+        public ActionResult Cadastrar(FiapSmartCityMVC.Models.TipoProduto tipoProduto)
+        {
+            if (ModelState.IsValid)
+            {
+                tipoProdutoRepository.Inserir(tipoProduto);
+
+                @TempData["mensagem"] = "Tipo cadastrado com sucesso!";
+                return RedirectToAction("Index", "TipoProduto");
+
+            }
+            else
+            {
+                return View(tipoProduto);
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Editar(int Id)
+        {
+            var tipoProduto = tipoProdutoRepository.Consultar(Id);
+            return View(tipoProduto);
+        }
+
+        [HttpPost]
+        public ActionResult Editar(FiapSmartCityMVC.Models.TipoProduto tipoProduto)
+        {
+
+            if (ModelState.IsValid)
+            {
+                tipoProdutoRepository.Alterar(tipoProduto);
+
+                @TempData["mensagem"] = "Tipo alterado com sucesso!";
+                return RedirectToAction("Index", "TipoProduto");
+            }
+            else
+            {
+                return View(tipoProduto);
+            }
 
         }
+
+
+        [HttpGet]
+        public ActionResult Consultar(int Id)
+        {
+            var tipoProduto = tipoProdutoRepository.Consultar(Id);
+            return View(tipoProduto);
+        }
+
+
+        [HttpGet]
+        public ActionResult Excluir(int Id)
+        {
+            tipoProdutoRepository.Excluir(Id);
+
+            @TempData["mensagem"] = "Tipo removido com sucesso!";
+
+            return RedirectToAction("Index", "TipoProduto");
+        }
+
+
+
     }
 }
-
-

@@ -1,40 +1,29 @@
-﻿@model IEnumerable<FiapSmartCityMVC.Models.TipoProduto>
+﻿<!DOCTYPE html>
+
+@model IEnumerable<FiapSmartCityMVC.Models.TipoProduto>
 @{
-    Layout = null;
+Layout = null;
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
+    <html>
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>FiapSmartCity</title>
-
-        <!-- importando bootstrap e o css do nosso site-->
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-        <!-- importando as libs JavaScript -->
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
+        <meta name="viewport" content="width=device-width" />
+        <title>Tipo de Produto</title>
     </head>
-</head>
-<body>
-    <h1>Tipo de Produto</h1>
-    <p>
-        <!-- uso de TagHelpers para definir o Controller e a Action -->
-        <a asp-controller="TipoProduto" asp-action="Cadastrar">Novo Tipo</a>
-    </p>
-    <table class="table" border="1">
-        <tr>
-            <th>Id</th>
-            <th>Descrição</th>
-            <th></th>
-        </tr>
+    <body>
+        <h1>Tipo de Produto</h1>
+        <p>
+            <!-- uso de TagHelpers para definir o Controller e a Action -->
+            <a asp-controller="TipoProduto" asp-action="Cadastrar">Novo Tipo</a>
+        </p>
+        <table class="table" border="1">
+            <tr>
+                <th>Id</th>
+                <th>Descrição</th>
+                <th></th>
+            </tr>
 
-        @foreach (var item in Model)
+            @foreach (var item in Model)
         {
             <tr>
                 <td>
@@ -60,9 +49,6 @@
                 </td>
             </tr>
         }
-    </table>
-</body>
+        </table>
+    </body>
 </html>
-
-
-
